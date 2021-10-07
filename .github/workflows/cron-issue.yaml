@@ -1,6 +1,8 @@
 name: Cron Create Issues
 
 on:
+  push:
+    branches: [ main ]
   schedule:
     - cron:  '* 12 * * *'
 
@@ -22,9 +24,8 @@ jobs:
         run: 'pip install -r requirements.txt'
       - name: Create The Issue
         run: "python scripts/cron-create-issue.py"
-        with:
-          env:
-            GITHUB_TOKEN: ${{ secrets.DSR_GITHUB_TOKEN }}
-            REPO_NAME: 'Zheaoli/do-something-right'
+        env:
+          GITHUB_TOKEN: ${{ secrets.DSR_GITHUB_TOKEN }}
+          REPO_NAME: 'Zheaoli/do-something-right'
           
             

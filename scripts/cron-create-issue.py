@@ -1,8 +1,8 @@
-from os import name
-from typing import Optional
-from pydantic import BaseSettings
 from datetime import datetime
+from typing import Optional
+
 import github
+from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
