@@ -2,6 +2,7 @@ from datetime import datetime
 from typing import Optional
 
 import github
+import pytz
 from pydantic import BaseSettings
 
 
@@ -16,7 +17,7 @@ GITHUB_CLIENT = github.Github(SETTINGS.GITHUB_TOKEN)
 
 
 def main():
-    now = datetime.now().strftime("%Y-%m-%d")
+    now = datetime.now(tz=pytz.timezone("Asia/Shanghai")).strftime("%Y-%m-%d")
     repo = GITHUB_CLIENT.get_repo(SETTINGS.REPO_NAME)
     try:
         label = repo.get_label(now)
