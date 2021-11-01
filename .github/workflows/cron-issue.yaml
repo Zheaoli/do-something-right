@@ -4,7 +4,8 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron:  '0 4,16 * * *'
+    # Create an issue every day on 00:01 CST
+    - cron:  '1 16 * * *'
 
 jobs:
   build:
