@@ -1,4 +1,6 @@
-# 刷题&捐款
+# Do Something Right/蓝莲花行动
+
+![logo](assets/logo.svg)
 
 ## 2021-11
 
